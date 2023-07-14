@@ -7,7 +7,7 @@
     "node": "18"
   },
   "scripts": {
-    "dev": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "build": "tsup src",
     "start": "node dist/server.js"
   },
@@ -22,6 +22,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@fastify/cors": "^8.3.0",
     "@prisma/client": "^5.0.0",
     "fastify": "^4.19.2",
     "zod": "^3.21.4"

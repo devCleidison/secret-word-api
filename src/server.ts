@@ -1,9 +1,14 @@
 import Fastify from "fastify";
+import cors from "@fastify/cors"
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 
 const app = Fastify();
 const prisma = new PrismaClient();
+
+app.register(cors, {
+  origin: true
+});
 
 app.get("/", (_, reply) => {
   return reply.code(200).send("Welcome to Secret Word API!");
