@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Word {
+  id         Int    @id @default(autoincrement())
+  word       String @unique
+  definition String
+}
